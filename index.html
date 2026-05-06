@@ -618,7 +618,7 @@ function calcResults(monthlyExp, decline, stateTax){
   const trueCost      = futureVal - grossDraw;                   // recovery permanently surrendered
   const yearsLost     = futureVal / annualExp;                   // future value of liquidated shares ÷ annual expenses
 
-  return { annualExp, grossDraw, preDeclineVal, futureVal, trueCost, yearsLost, totalTax };
+  return { monthlyExp, annualExp, grossDraw, preDeclineVal, futureVal, trueCost, yearsLost, totalTax };
 }
 
 // ── CALCULATE ──
