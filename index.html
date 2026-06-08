@@ -695,16 +695,16 @@ function calculate(){
     </div>
     <div class="gb-val">${fmtM(r.futureVal)}</div>`;
 
+  // Update optin block 1 loss number
+  const fvFormatted = fmtM(r.futureVal);
+  const optinLossEl = document.getElementById('optinLossVal');
+  const optinSubEl = document.getElementById('optinLossSub');
+  if (optinLossEl) optinLossEl.textContent = fvFormatted;
+  if (optinSubEl) optinSubEl.innerHTML = `${corr.name} &nbsp;·&nbsp; ${fmt(monthlyExp)}/mo &nbsp;·&nbsp; Pre-decline share value compounded at 7% over 10 years`;
+
   // RECOVERY BOX
   document.getElementById('recoveryBox').innerHTML =
-    // Update optin block 1 loss number
-    const fvFormatted = fmtM(r.futureVal);
-    const optinLossEl = document.getElementById('optinLossVal');
-    const optinSubEl = document.getElementById('optinLossSub');
-    if (optinLossEl) optinLossEl.textContent = fvFormatted;
-    if (optinSubEl) optinSubEl.innerHTML = `${corr.name} &nbsp;·&nbsp; ${fmt(monthlyExp)}/mo &nbsp;·&nbsp; Pre-decline share value compounded at 7% over 10 years`;
-
-    \`<div class="recovery-eyebrow">What the market delivered to those who stayed invested — ${corr.name} recovery</div>
+    `<div class="recovery-eyebrow">What the market delivered to those who stayed invested — ${corr.name} recovery</div>
     <div class="recovery-cols">
       <div class="rcol">
         <div class="rcol-label">${corr.r1Label} after the bottom</div>
